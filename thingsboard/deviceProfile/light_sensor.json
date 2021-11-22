@@ -24,7 +24,76 @@
       "type": "DISABLED",
       "provisionDeviceSecret": null
     },
-    "alarms": null
+    "alarms": [
+      {
+        "id": "2a0d19ab-05bb-7970-bb40-c5d31cc949a4",
+        "alarmType": "Status warning",
+        "createRules": {
+          "WARNING": {
+            "condition": {
+              "condition": [
+                {
+                  "key": {
+                    "type": "TIME_SERIES",
+                    "key": "status"
+                  },
+                  "valueType": "STRING",
+                  "value": null,
+                  "predicate": {
+                    "type": "STRING",
+                    "operation": "EQUAL",
+                    "value": {
+                      "defaultValue": "off",
+                      "userValue": null,
+                      "dynamicValue": null
+                    },
+                    "ignoreCase": false
+                  }
+                }
+              ],
+              "spec": {
+                "type": "SIMPLE"
+              }
+            },
+            "schedule": null,
+            "alarmDetails": null,
+            "dashboardId": null
+          }
+        },
+        "clearRule": {
+          "condition": {
+            "condition": [
+              {
+                "key": {
+                  "type": "TIME_SERIES",
+                  "key": "status"
+                },
+                "valueType": "STRING",
+                "value": null,
+                "predicate": {
+                  "type": "STRING",
+                  "operation": "EQUAL",
+                  "value": {
+                    "defaultValue": "on",
+                    "userValue": null,
+                    "dynamicValue": null
+                  },
+                  "ignoreCase": false
+                }
+              }
+            ],
+            "spec": {
+              "type": "SIMPLE"
+            }
+          },
+          "schedule": null,
+          "alarmDetails": null,
+          "dashboardId": null
+        },
+        "propagate": false,
+        "propagateRelationTypes": null
+      }
+    ]
   },
   "provisionDeviceKey": null,
   "firmwareId": null,
