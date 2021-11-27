@@ -2,7 +2,7 @@
 
 if [[ "$1" = "l1" ]]
 then
-  mosquitto_pub -d -q 1 -h "localhost" -p "1883" -t "v1/devices/me/telemetry" -u "9KoWvn7JUZ1xeoVUJPtr" -m {"status":$2}
+  mosquitto_pub -d -q 1 -h "192.168.1.42" -p "1883" -t "v1/devices/me/telemetry" -u "9KoWvn7JUZ1xeoVUJPtr" -m {"status":$2}
   mosquitto_pub -d -q 1 -h "localhost" -p "1883" -t "v1/devices/me/telemetry" -u "9KoWvn7JUZ1xeoVUJPtr" -m {"location":bedroom}
   mosquitto_pub -d -q 1 -h "localhost" -p "1883" -t "v1/devices/me/telemetry" -u "9KoWvn7JUZ1xeoVUJPtr" -m {"intensity":$3}
 elif [[ "$1" = "l2" ]]
@@ -32,19 +32,19 @@ then
   curl -v -X POST -d "{\"location\": Garden}" http://localhost:9090/api/v1/PNLCvQREWEG5gIYZkXDD/telemetry --header "Content-Type:application/json"
 elif [[ "$1" = "f1" ]]
 then
-  echo -n '{"total": 10}' | coap post coap://localhost/api/v1/q08AYTqfJFfTMlxsaK9f/telemetry
+  echo -n '{"total": 0}' | coap post coap://localhost/api/v1/q08AYTqfJFfTMlxsaK9f/telemetry
   echo -n '{"consumption": 500}' | coap post coap://localhost/api/v1/q08AYTqfJFfTMlxsaK9f/telemetry
   echo -n '{"liquid": soho}' | coap post coap://localhost/api/v1/q08AYTqfJFfTMlxsaK9f/telemetry
 elif [[ "$1" = "f2" ]]
 then
-  echo -n '{"total": 10}' | coap post coap://localhost/api/v1/YK14PpD43PisMRF6RP6l/telemetry
-  echo -n '{"consumption": 500}' | coap post coap://localhost/api/v1/YK14PpD43PisMRF6RP6l/telemetry
-  echo -n '{"liquid": soho}' | coap post coap://localhost/api/v1/YK14PpD43PisMRF6RP6l/telemetry
+  echo -n '{"total": 20}' | coap post coap://localhost/api/v1/YK14PpD43PisMRF6RP6l/telemetry
+  echo -n '{"consumption": 250}' | coap post coap://localhost/api/v1/YK14PpD43PisMRF6RP6l/telemetry
+  echo -n '{"liquid": vodka}' | coap post coap://localhost/api/v1/YK14PpD43PisMRF6RP6l/telemetry
 elif [[ "$1" = "f3" ]]
 then
-  echo -n '{"total": 10}' | coap post coap://localhost/api/v1/6gs9AOtSSP2QtUhLzmiw/telemetry
-  echo -n '{"consumption": 500}' | coap post coap://localhost/api/v1/6gs9AOtSSP2QtUhLzmiw/telemetry
-  echo -n '{"liquid": soho}' | coap post coap://localhost/api/v1/6gs9AOtSSP2QtUhLzmiw/telemetry
+  echo -n '{"total": 30}' | coap post coap://localhost/api/v1/6gs9AOtSSP2QtUhLzmiw/telemetry
+  echo -n '{"consumption": 750}' | coap post coap://localhost/api/v1/6gs9AOtSSP2QtUhLzmiw/telemetry
+  echo -n '{"liquid": malibu}' | coap post coap://localhost/api/v1/6gs9AOtSSP2QtUhLzmiw/telemetry
 else
   echo "how to use script\n"
 fi
