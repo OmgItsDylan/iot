@@ -3,28 +3,35 @@
 import sys
 import random
 import time
+import os
 
-def fluid_type():
-  return 'no clue'
+# q08AYTqfJFfTMlxsaK9f
+# YK14PpD43PisMRF6RP6l
+# 6gs9AOtSSP2QtUhLzmiw
 
 def ink_available():
   l = random.randint(0, 3) + random.random()
-  return l
+  return '{"total": ' + str(l) + '}'
 
 
 def consumption():
   ml = random.randint(0, 100)
-  return ml
+  return '{"consumption": ' + str(ml) + '}'
+
 
 def main():
   if sys.argv and len(sys.argv) > 1:
     access_code = sys.argv[1]
+
+    cmd = "echo -n '"
+    cmd2 = "' | coap post coap://localhost/api/v1/" + access_code + "/telemetry"
+
     while True:
-      type = fluid_type()
-      ink = ink_available()
-      ml = consumption()
-      print(type, ink, ml)
-      time.sleep(2)
+      msgTotal = ink_available()
+      msgCons = consumption()
+      os.system(cmd + msgTotal + cmd2)
+      os.system(cmd + msgCons + cmd2)
+      time.sleep(3)
   else:
     print("Usage: python3 fluid.py access_code")
 
