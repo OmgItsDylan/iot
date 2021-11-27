@@ -1,0 +1,66 @@
+{
+  "ruleChain": {
+    "additionalInfo": {
+      "description": ""
+    },
+    "name": "sendEmail",
+    "type": "CORE",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": false,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": 0,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 328,
+          "layoutY": 148
+        },
+        "type": "org.thingsboard.rule.engine.mail.TbMsgToEmailNode",
+        "name": "MakeEmail",
+        "debugMode": true,
+        "configuration": {
+          "fromTemplate": "info@testmail.org",
+          "toTemplate": "maxence.vasseur@epitech.eu",
+          "ccTemplate": null,
+          "bccTemplate": null,
+          "subjectTemplate": "Device ${deviceType} no more liquid",
+          "mailBodyType": "false",
+          "isHtmlTemplate": null,
+          "bodyTemplate": "Device ${deviceName} has no more liquid. Please fill up the device"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 614,
+          "layoutY": 149
+        },
+        "type": "org.thingsboard.rule.engine.mail.TbSendEmailNode",
+        "name": "sendEmail",
+        "debugMode": true,
+        "configuration": {
+          "useSystemSmtpSettings": true,
+          "smtpHost": "localhost",
+          "smtpPort": 25,
+          "username": null,
+          "password": null,
+          "smtpProtocol": "smtp",
+          "timeout": 10000,
+          "enableTls": false,
+          "tlsVersion": "TLSv1.2",
+          "enableProxy": false,
+          "proxyHost": null,
+          "proxyPort": null,
+          "proxyUser": null,
+          "proxyPassword": null
+        }
+      }
+    ],
+    "connections": null,
+    "ruleChainConnections": null
+  }
+}
