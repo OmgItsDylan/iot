@@ -204,41 +204,6 @@
               "filterId": null,
               "dataKeys": [
                 {
-                  "name": "consumption",
-                  "type": "timeseries",
-                  "label": "consumption",
-                  "color": "#2196f3",
-                  "settings": {
-                    "excludeFromStacking": false,
-                    "hideDataByDefault": false,
-                    "disableDataHiding": false,
-                    "removeFromLegend": false,
-                    "showLines": true,
-                    "fillLines": false,
-                    "showPoints": false,
-                    "showPointShape": "circle",
-                    "pointShapeFormatter": "var size = radius * Math.sqrt(Math.PI) / 2;\nctx.moveTo(x - size, y - size);\nctx.lineTo(x + size, y + size);\nctx.moveTo(x - size, y + size);\nctx.lineTo(x + size, y - size);",
-                    "showPointsLineWidth": 5,
-                    "showPointsRadius": 3,
-                    "tooltipValueFormatter": "",
-                    "showSeparateAxis": false,
-                    "axisTitle": "",
-                    "axisPosition": "left",
-                    "axisTicksFormatter": "",
-                    "thresholds": [
-                      {
-                        "thresholdValueSource": "predefinedValue"
-                      }
-                    ],
-                    "comparisonSettings": {
-                      "showValuesForComparison": true,
-                      "comparisonValuesLabel": "",
-                      "color": ""
-                    }
-                  },
-                  "_hash": 0.42924070324697017
-                },
-                {
                   "name": "total",
                   "type": "timeseries",
                   "label": "total",
@@ -272,6 +237,41 @@
                     }
                   },
                   "_hash": 0.3091145265546251
+                },
+                {
+                  "name": "consumptionL",
+                  "type": "timeseries",
+                  "label": "consumptionL",
+                  "color": "#4caf50",
+                  "settings": {
+                    "excludeFromStacking": false,
+                    "hideDataByDefault": false,
+                    "disableDataHiding": false,
+                    "removeFromLegend": false,
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showPointShape": "circle",
+                    "pointShapeFormatter": "var size = radius * Math.sqrt(Math.PI) / 2;\nctx.moveTo(x - size, y - size);\nctx.lineTo(x + size, y + size);\nctx.moveTo(x - size, y + size);\nctx.lineTo(x + size, y - size);",
+                    "showPointsLineWidth": 5,
+                    "showPointsRadius": 3,
+                    "tooltipValueFormatter": "",
+                    "showSeparateAxis": false,
+                    "axisTitle": "",
+                    "axisPosition": "left",
+                    "axisTicksFormatter": "",
+                    "thresholds": [
+                      {
+                        "thresholdValueSource": "predefinedValue"
+                      }
+                    ],
+                    "comparisonSettings": {
+                      "showValuesForComparison": true,
+                      "comparisonValuesLabel": "",
+                      "color": ""
+                    }
+                  },
+                  "_hash": 0.7374752435148897
                 }
               ]
             }
@@ -320,7 +320,22 @@
             "fontSize": "16px",
             "fontWeight": 400
           },
-          "useDashboardTimewindow": true
+          "useDashboardTimewindow": true,
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "widgetStyle": {},
+          "units": "L",
+          "noDataDisplayMessage": "",
+          "showLegend": true,
+          "legendConfig": {
+            "direction": "column",
+            "position": "bottom",
+            "sortDataKeys": false,
+            "showMin": false,
+            "showMax": false,
+            "showAvg": true,
+            "showTotal": false
+          }
         },
         "row": 0,
         "col": 0,
@@ -466,11 +481,71 @@
         "row": 0,
         "col": 0,
         "id": "8be6b744-2fb3-6449-8a8c-3eed8d258d2c"
+      },
+      "8251ba55-e49c-2a9b-d9a5-78bfad35eff3": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 5,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "fffe3836-b147-4660-70e6-fe9209693a24",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "totalConsumption",
+                  "type": "timeseries",
+                  "label": "totalConsumption",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.6536811262331406
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#ff5722",
+          "color": "rgba(255, 255, 255, 0.87)",
+          "padding": "16px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "New Simple card",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "ml",
+          "decimals": 0,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "noDataDisplayMessage": ""
+        },
+        "row": 0,
+        "col": 0,
+        "id": "8251ba55-e49c-2a9b-d9a5-78bfad35eff3"
       }
     },
     "states": {
       "default": {
-        "name": "F1 dashboard",
+        "name": "F3 dashboard",
         "root": true,
         "layouts": {
           "main": {
@@ -484,26 +559,32 @@
               "bebc50af-d2d7-cfe2-fd2b-feeb7a179b7c": {
                 "sizeX": 7,
                 "sizeY": 3,
-                "row": 0,
-                "col": 7
+                "row": 3,
+                "col": 0
               },
               "2190b74f-0287-e089-8343-3a01fe00b7fd": {
                 "sizeX": 7,
                 "sizeY": 3,
-                "row": 0,
-                "col": 14
-              },
-              "0df45095-9ad5-d910-0d15-fc52a8040568": {
-                "sizeX": 11,
-                "sizeY": 8,
-                "row": 3,
+                "row": 6,
                 "col": 0
               },
+              "0df45095-9ad5-d910-0d15-fc52a8040568": {
+                "sizeX": 19,
+                "sizeY": 12,
+                "row": 0,
+                "col": 7
+              },
               "8be6b744-2fb3-6449-8a8c-3eed8d258d2c": {
-                "sizeX": 10,
-                "sizeY": 8,
-                "row": 3,
-                "col": 11
+                "sizeX": 12,
+                "sizeY": 12,
+                "row": 0,
+                "col": 26
+              },
+              "8251ba55-e49c-2a9b-d9a5-78bfad35eff3": {
+                "sizeX": 7,
+                "sizeY": 3,
+                "row": 9,
+                "col": 0
               }
             },
             "gridSettings": {
@@ -519,13 +600,13 @@
     "entityAliases": {
       "fffe3836-b147-4660-70e6-fe9209693a24": {
         "id": "fffe3836-b147-4660-70e6-fe9209693a24",
-        "alias": "F1",
+        "alias": "F3",
         "filter": {
           "type": "singleEntity",
           "resolveMultiple": false,
           "singleEntity": {
             "entityType": "DEVICE",
-            "id": "d62fc740-4631-11ec-bd4e-6721d8ab0493"
+            "id": "e4f1b3b0-4631-11ec-bd4e-6721d8ab0493"
           }
         }
       }
