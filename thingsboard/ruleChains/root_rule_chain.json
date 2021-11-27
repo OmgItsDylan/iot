@@ -201,6 +201,20 @@
           "ruleChainNodeId": "rule-chain-node-13"
         },
         "type": "Success"
+      },
+      {
+        "fromIndex": 0,
+        "targetRuleChainId": {
+          "entityType": "RULE_CHAIN",
+          "id": "8426c560-4ec5-11ec-9a42-af2baedecac9"
+        },
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 1115,
+          "layoutY": 81,
+          "ruleChainNodeId": "rule-chain-node-14"
+        },
+        "type": "Success"
       }
     ]
   }
