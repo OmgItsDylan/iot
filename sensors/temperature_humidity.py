@@ -28,7 +28,7 @@ def loop():
   os.system(cmd + msgTemp + cmd2)
   os.system(cmd + msgHumi + cmd2)
   win.update_idletasks()
-  win.after(1000, loop)
+  win.after(3000, loop)
 
 
 def main():
