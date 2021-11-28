@@ -2,7 +2,6 @@
 
 import sys
 import random
-import time
 import os
 import tkinter as tk
 
