@@ -18,6 +18,20 @@ ThingsBoard is an open-source IoT platform for device management, data collectio
   - Sends random Data to the server every 3 seconds
   - Uses CoAP protocol
 
+How to use:
+
+`python3 light.py {access_code}`
+
+This launches the app to simulate the light sensor.
+
+`python3 temperature_humidity.py {access_code}`
+
+This launches the app to simulate the temperature and humidity sensor.
+
+`python3 fluid.py {access_code}`
+
+This launches the app to simulate the fluid sensor.
+
 ## Thingsboard
 
 
