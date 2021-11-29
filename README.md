@@ -74,3 +74,7 @@ This rule chain will add the consumption of every liquid into a value that will 
 ml_into_l_conversion rule chain:
 
 This rule chain will first check if the data has a consumption field. If it does, it will convert the consumption from ml to l and save that new value in a timeseries for the device.
+
+temperature_delta_validation rule chain:
+
+This rule chain will calculate the delta of the last ten-minutes temperature readings and the latest temperature reading. If that delta exceeds 15 degrees, it will create a critical alarm for the device. If it does not, it will either do nothing or clear the previous critical alarm.
