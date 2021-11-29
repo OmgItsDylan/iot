@@ -465,6 +465,66 @@
         "row": 0,
         "col": 0,
         "id": "7f4fb292-1dba-a513-4d38-1a659438781c"
+      },
+      "727ca7df-1d54-69ae-41ae-78cf9e7ec658": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 5,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "1f1784a8-b58f-db59-abc7-2020a6858605",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "fahrenheit",
+                  "type": "timeseries",
+                  "label": "fahrenheit",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.830608308826823
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#ff5722",
+          "color": "rgba(255, 255, 255, 0.87)",
+          "padding": "16px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "New Simple card",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "°F",
+          "decimals": 0,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "noDataDisplayMessage": ""
+        },
+        "row": 0,
+        "col": 0,
+        "id": "727ca7df-1d54-69ae-41ae-78cf9e7ec658"
       }
     },
     "states": {
@@ -475,16 +535,16 @@
           "main": {
             "widgets": {
               "16703586-d245-f707-4e16-450fa48891d9": {
-                "sizeX": 7,
+                "sizeX": 5,
                 "sizeY": 3,
                 "row": 0,
                 "col": 0
               },
               "9dc1cfd6-be47-b8dc-432c-db8ebd38588b": {
-                "sizeX": 7,
+                "sizeX": 4,
                 "sizeY": 3,
                 "row": 0,
-                "col": 7
+                "col": 5
               },
               "90c4a48f-c6ad-d843-9f78-7a4305750c56": {
                 "sizeX": 7,
@@ -503,6 +563,12 @@
                 "sizeY": 7,
                 "row": 3,
                 "col": 11
+              },
+              "727ca7df-1d54-69ae-41ae-78cf9e7ec658": {
+                "sizeX": 5,
+                "sizeY": 3,
+                "row": 0,
+                "col": 9
               }
             },
             "gridSettings": {
