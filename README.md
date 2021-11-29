@@ -34,11 +34,43 @@ This launches the app to simulate the fluid sensor.
 
 ## Thingsboard
 
+### Architecture
+![image](arch.png)
 
 ### Device Profiles
 
+In the thingsboard/deviceProfile/ folder, there are the various device profiles that were created for this project. One for each type of sensor. The devices created by the device profiles will automatically be set to use the network protocol set in the device profiles. The devices will also inherit alarm rules created inside the device profiles.
 
 ### Dashboards
 
+In the thingsboard/dashboards/ folder, there are the various device dashboards that were created and used throught this project. There will be 9 different dashboards for each of the 9 devices that were registered on our thingsboard. These dashboards have multiple widgets to show the devices latest telemetries, devices alarms and the evolution of the various telemetries.
 
 ### Rule Chains
+
+Root rule chain:
+
+The first rule chain where every telemetry passes through. It will save the telemetry into a time series and if thats a success, it will send the various telemetries to the other rule chains designed by us to do various telemetry calculations and or just adding rules to the data.
+
+CheckIfLiquidEmpty rule chain:
+
+This rule chain first checks if the data has a "total" field. Then check the value of the field. if "<=" to 0, it will create a critical alarm for the device and send the telemetry to our sendEmail rule chain. If the value is above 0, it will either to do nothing or clear the previous critical alarm.
+
+sendEmail rule chain:
+
+This rule chain will take in the sent telemetry, create a email from the template given to the node in the rule chain and finally send out the email to the device's owner (or in our case, to maxence's email address).
+
+FahrenheitCalculation rule chain:
+
+This rule chain first checks if the data has a "temperature" field. If it does, it transforms the temperature value into the fahrenheit value, and finally saved that value in a timeseries for the device.
+
+liquid_consumption rule chain:
+
+This rule chain first checks if the data has a "consumption" field. If it does, it add to the metadata the totalConsumption telemetry data from the device. Then it will add the consumption value to the totalConsumption and save that new value as the new totalConsumption.
+
+all_liquid_consumption rule chain:
+
+This rule chain will add the consumption of every liquid into a value that will be saved. WIP
+
+ml_into_l_conversion rule chain:
+
+This rule chain will first check if the data has a consumption field. If it does, it will convert the consumption from ml to l and save that new value in a timeseries for the device.
